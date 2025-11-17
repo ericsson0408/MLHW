@@ -1,4 +1,4 @@
-# ADL HW1 interence Guide test
+# ADL HW1 interence Guide test1
 
 This project provides a complete pipeline for a two-stage inference process involving a Multiple-Choice (MC) model followed by a Question-Answering (QA) model.
 
