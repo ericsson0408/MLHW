@@ -8,7 +8,7 @@ from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM, BitsAndB
 # ==========================================
 
 # 使用 Llama 3.1-8B Instruct（需 Hugging Face 權限）
-MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"
+MODEL_ID = "Qwen/Qwen2.5-7B-Instruct"
 # 如果測試跑不動，也可以暫時改成小一點的模型：
 # MODEL_ID = "gpt2"
 
