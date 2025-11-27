@@ -10,29 +10,26 @@ from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM, BitsAndB
 
 from rag_llama_demo_en import generator
 
-# 基本使用
-fake_news = generator(
-    title="Stock Market Hits Record High",
-    content="The stock market reached unprecedented levels today..."
+//import
+from class_generator import FakeNewsGenerator
+my_gen = FakeNewsGenerator() 
+
+//input
+title = "台積電宣布在南極設廠" 
+content = "台積電今日宣布重大計畫，將與企鵝合作開發低溫超導晶片..."
+feedback = "避免使用 '企鵝'，改用 '當地專家'，語氣要更嚴肅一點"
+
+//call class
+fake_news = my_gen.generate( 
+title=title, 
+content=content, 
+feedback_prompt=feedback,
+use_rag=True,  # 是否要去維基百科查資料增加可信度 
+lang="zh"  # 設定維基百科搜尋語言為中文
 )
 
-# 使用 feedback 來改善生成品質
-fake_news = generator(
-    title="Stock Market Hits Record High",
-    content="The stock market reached unprecedented levels today...",
-    feedback_prompt="Avoid using 'shocking discovery', 'anonymous sources', 'experts claim'"
-)
-
-# 使用 FakeNewsGenerator 類別
-from rag_llama_demo_en import FakeNewsGenerator
-gen = FakeNewsGenerator()
-fake_news = gen.generate(
-    title="Breaking News",
-    content="Original news content...",
-    feedback_prompt="Avoid words like 'shocking'",
-    use_rag=True,
-    lang="en"
-)
+//output
+print(fake_news)
 
 
 """
